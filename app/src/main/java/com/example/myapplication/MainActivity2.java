@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.google.gson.Gson;
+
 public class MainActivity2 extends AppCompatActivity {
     EditText name,email_adress,collage,phone;
     @Override
@@ -20,10 +22,14 @@ public class MainActivity2 extends AppCompatActivity {
         collage=findViewById(R.id.enter_collage_name);
         email_adress=findViewById(R.id.enter_email);
         phone=findViewById(R.id.enter_phone);
-        it.putExtra("name",name.getText().toString());
-        it.putExtra("collage_name",collage.getText().toString());
-        it.putExtra("email_id",email_adress.getText().toString());
-        it.putExtra("phone_number",phone.getText().toString());
+        Student student = new Student();
+        student.name = name.getText().toString();
+        student.collegeName = collage.getText().toString();
+        student.emailId = email_adress.getText().toString();
+        student.phoneNumber = phone.getText().toString();
+        Gson gson = new Gson();
+        String studentDetail = gson.toJson(student);
+        it.putExtra("student_detail", studentDetail);
         startActivity(it);
     }
 }

@@ -3,7 +3,10 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.TextView;
+
+import com.google.gson.Gson;
 
 import static java.lang.System.*;
 
@@ -17,34 +20,39 @@ public class MainActivity3 extends AppCompatActivity {
         collage=findViewById(R.id.act3_collage);
         email_id=findViewById(R.id.act3_email_id);
         phone_number=findViewById(R.id.act3_phone_number);
+
         Intent it=getIntent();
         Bundle bd=it.getExtras();
 
-        if (!(bd.getString("name")).isEmpty() ){
-            name.setText("Your name is "+bd.getString("name"));
-        }
-        else{
-            name.setText("name is not entered on previous page");
-        }
-        if ( !(bd.getString("collage_name")).isEmpty()) {
-            collage.setText("your collage name is " + bd.getString("collage_name"));
-        }
-        else{
-            collage.setText("collage name is not entered on previous page");
-        }
-        if ( !(bd.getString("email_id")).isEmpty() ) {
-            email_id.setText("Your email id is " + bd.getString("email_id"));
-        }
-        else{
-            email_id.setText("email id is not entered on previous page");
-        }
-        if ( !(bd.getString("phone_number")).isEmpty() ) {
-            phone_number.setText("Your phone number is " + bd.getString("phone_number"));
-        }
-        else{
-            phone_number.setText("phone number is not entered on previous page");
+        if(bd.containsKey("student_detail")){
+            Gson gson = new Gson();
+            String studentDetail = bd.getString("student_detail");
+            Student student = gson.fromJson(studentDetail, Student.class);
+
+            if (!TextUtils.isEmpty(student.name)){
+                name.setText("Your name is "+student.name);
+            }
+            else{
+                name.setText("name is not entered on previous page");
+            }
+            if ( !TextUtils.isEmpty(student.collegeName) ) {
+                collage.setText("your collage name is " + student.collegeName);
+            }
+            else{
+                collage.setText("collage name is not entered on previous page");
+            }
+            if (!TextUtils.isEmpty(student.emailId)) {
+                email_id.setText("Your email id is " +student.emailId);
+            }
+            else{
+                email_id.setText("email id is not entered on previous page");
+            }
+            if (!TextUtils.isEmpty(student.phoneNumber)) {
+                phone_number.setText("Your phone number is " + student.phoneNumber);
+            }
+            else{
+                phone_number.setText("phone number is not entered on previous page");
+            }
         }
     }
-
-
 }
