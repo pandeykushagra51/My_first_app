@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.11" />
+        app:layout_constraintVertical_bias="0.083" />
 
     <EditText
         android:id="@+id/enter_password"
@@ -32,10 +32,9 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.126" />
+        app:layout_constraintVertical_bias="0.051" />
 
     <Button
         android:id="@+id/reverse"
@@ -50,30 +49,55 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enter_password"
-        app:layout_constraintVertical_bias="0.149" />
+        app:layout_constraintVertical_bias="0.101" />
 
     <TextView
         android:id="@+id/reversed_string"
         android:layout_width="275dp"
         android:layout_height="43dp"
         android:gravity="center"
-        android:hint="reversed string will appera here "
+        android:hint="@string/init_msg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reverse"
-        app:layout_constraintVertical_bias="0.284" />
+        app:layout_constraintVertical_bias="0.119" />
 
     <Button
-        android:id="@+id/next_1"
+        android:id="@+id/home_1_click"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="next_page"
+        android:onClick="home_click_1"
         android:text="Next Page"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reversed_string" />
+        app:layout_constraintTop_toBottomOf="@+id/reversed_string"
+        app:layout_constraintVertical_bias="0.142" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/home_2_click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="home_click_2"
+        android:text="Other Services"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_1_click"
+        app:layout_constraintVertical_bias="0.331" />
+
+    <Button
+        android:id="@+id/buy_fruit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="BuyFruit"
+        android:text="buy fruit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_2_click" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

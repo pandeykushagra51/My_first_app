@@ -1,10 +1,9 @@
 package com.example.myapplication;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,14 +29,23 @@ public class MainActivity extends AppCompatActivity {
         // append a string into StringBuilder input1
         ans.append(input);
         ans.reverse();
-        str1.setText("reversed string is : "+ans);
+        str1.setText(getString(R.string.initiation)+ans);
     }
 
-    public void next_page(View view){
+    public void home_click_1(View view){
 
-          Intent it1=new Intent(this,MainActivity2.class);
-          startActivity(it1);
+          Intent it=new Intent(this,MainActivity2.class);
+          startActivity(it);
 
     }
 
+    public void home_click_2(View view){
+        Intent it=new Intent(this,MainActivity4.class);
+        startActivity(it);
+    }
+
+    public void BuyFruit(View view){
+        Intent it=new Intent(this,MainActivity5.class);
+        startActivity(it);
+    }
 }

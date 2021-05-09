@@ -1,14 +1,12 @@
 package com.example.myapplication;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
-
-import static java.lang.System.*;
 
 public class MainActivity3 extends AppCompatActivity {
     TextView name,collage,email_id,phone_number;

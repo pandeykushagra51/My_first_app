@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity4">
+
+    <ImageButton
+        android:id="@+id/open_youtube"
+        android:layout_width="227dp"
+        android:layout_height="180dp"
+        android:onClick="open_youtube"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.535"
+        app:srcCompat="@drawable/open_youtube" />
+
+    <ImageButton
+        android:id="@+id/make_call"
+        android:layout_width="183dp"
+        android:layout_height="183dp"
+        android:layout_marginStart="16dp"
+        android:onClick="make_call"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/send_mail"
+        app:srcCompat="@drawable/make_call" />
+
+    <ImageButton
+        android:id="@+id/send_mail"
+        android:layout_width="183dp"
+        android:layout_height="183dp"
+        android:layout_marginTop="84dp"
+        android:onClick="send_mail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toEndOf="@+id/make_call"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/send_gmail" />
+
+    <ImageButton
+        android:id="@+id/open_music"
+        android:layout_width="227dp"
+        android:layout_height="180dp"
+        android:onClick="open_music"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/open_youtube"
+        app:srcCompat="@drawable/music_player" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
